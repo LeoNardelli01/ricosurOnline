@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid{
+  background-color: rgb(48, 48, 48);
+  padding: 0px !important;
+}
+
+
+header .logo{
+  position: absolute;
+  width: 64px;
+  height: 64px;
+
+}
+.pantalla-uno{
+  background-image: url("../assets/img/fondo.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.menu {
+  height: 64px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+
+}
+.menu li{
+  margin-left: 10px;
+  margin-right: 10px;
+  list-style: none;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+
+}
+
+.pantalla-dos{
+  width: 100vw;
+  height: 100vh;
+}
