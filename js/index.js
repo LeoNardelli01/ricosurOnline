@@ -2,6 +2,12 @@ $(function(){
   var btn_ingresar = $("#btn-ingresar");
   var btn_registrarse = $("#btn-registrarse")
   var btn_milista = $("#btn-milista");
+  var btn_home = $("#btn-home");
+  var btn_buscar = $("#btn-buscar");
+  var btn_ofertas = $("#btn-ofertas");
+  var btn_categorias = $("#btn-categorias");
+  var btn_contacto = $("#btn-contacto");
+
   // --------------
   var prevScrollpos = window.pageYOffset;
 
@@ -10,19 +16,23 @@ $(function(){
 
     var currentScrollpos = window.pageYOffset;
 
-    if (prevScrollpos < currentScrollpos) {
+    if (prevScrollpos <= 50) {
+      $("header").fadeIn();
+    } else if (prevScrollpos < currentScrollpos) {
       $("header").fadeOut();
-      console.log("ocultar");
 
     } else{
       $("header").fadeIn();
-      console.log("mostrar");
+
     }
     prevScrollpos = currentScrollpos;
   });
 
 
   // BOTONES
+  btn_home.click(function(){
+    $(location).attr('href', 'index.html');
+  });
   btn_ingresar.click(function(){
     alert("ingresar");
   });

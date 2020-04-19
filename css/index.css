@@ -14,6 +14,8 @@ header .logo{
   position: absolute;
   width: 64px;
   height: 64px;
+  padding: 5px;
+  margin: 5px;
 
 }
 .pantalla-uno{
@@ -37,27 +39,55 @@ header .logo{
   list-style: none;
   color: white;
   font-family: 'Exo 2', sans-serif;
+  text-shadow: 6px 4px 10px black;
 
 }
 
+.pantalla-uno .titulo{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.pantalla-uno .titulo h1{
+  font-family: 'Exo 2', sans-serif;
+  color: red;
+  font-size: 48px;
+  font-weight: bolder;
+
+}
 .pantalla-dos{
   width: 100vw;
   height: 100vh;
-  rgb(237, 100, 168);
+  background-color: white;
+
+
+}
+
+.pantalla-tres{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(48, 48, 48);
+  background-attachment: fixed;
 }
 
 footer{
+  box-shadow: 5px 0 0 black;
   height: 70px;
   background-color: rgb(48, 48, 48);
   padding-top: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 i{
-  font-size: 36px;
+  font-size: 28px;
   color: white;
   display: inline;
 }
 p{
   color: white;
+  font-family: 'Exo 2', sans-serif
 }
 
 #btn-home,
