@@ -10,22 +10,34 @@ $(function(){
 
   // --------------
   var prevScrollpos = window.pageYOffset;
+  var header = $("header");
+
+  var pantalla_uno = $(".pantalla-uno");
+  var pantallaUnoHeight = pantalla_uno.outerHeight();
+
 
   // SCROLL
   $(document).on('scroll', function(){
-
     var currentScrollpos = window.pageYOffset;
+    var scrollPorcentaje = (pantallaUnoHeight - window.scrollY) / pantallaUnoHeight;
+
+    if (scrollPorcentaje >= 0) {
+      pantalla_uno.css('opacity', (scrollPorcentaje - 0.28));
+    } else{
+      pantalla_uno.css('opacity', (scrollPorcentaje + 0.28));
+    }
 
     if (prevScrollpos <= 50) {
-      $("header").fadeIn();
+      header.fadeIn();
     } else if (prevScrollpos < currentScrollpos) {
-      $("header").fadeOut();
-
+      header.fadeOut();
     } else{
-      $("header").fadeIn();
-
+      header.fadeIn();
     }
     prevScrollpos = currentScrollpos;
+
+
+
   });
 
 

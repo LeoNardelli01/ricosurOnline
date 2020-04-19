@@ -5,7 +5,7 @@
 }
 
 .container-fluid{
-
+  background-color: rgb(48, 48, 48);
   padding: 0px !important;
 }
 
@@ -60,15 +60,13 @@ header .logo{
 .pantalla-dos{
   width: 100vw;
   height: 100vh;
-  background-color: white;
-
-
+  
 }
 
 .pantalla-tres{
   width: 100vw;
   height: 100vh;
-  background-color: rgb(48, 48, 48);
+
   background-attachment: fixed;
 }
 
