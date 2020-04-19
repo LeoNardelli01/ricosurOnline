@@ -5,7 +5,7 @@
 }
 
 .container-fluid{
-  background-color: rgb(48, 48, 48);
+
   padding: 0px !important;
 }
 
@@ -43,4 +43,29 @@ header .logo{
 .pantalla-dos{
   width: 100vw;
   height: 100vh;
+  rgb(237, 100, 168);
+}
+
+footer{
+  height: 70px;
+  background-color: rgb(48, 48, 48);
+  padding-top: 7px;
+}
+i{
+  font-size: 36px;
+  color: white;
+  display: inline;
+}
+p{
+  color: white;
+}
+
+#btn-home,
+#btn-buscar,
+#btn-ofertas,
+#btn-categorias,
+#btn-contacto {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
