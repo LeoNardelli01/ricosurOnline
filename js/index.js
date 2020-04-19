@@ -11,11 +11,11 @@ $(function(){
     var currentScrollpos = window.pageYOffset;
 
     if (prevScrollpos < currentScrollpos) {
-      $("header").fadeOut('slow');
+      $("header").fadeOut();
       console.log("ocultar");
 
     } else{
-      $("header").fadeIn('100');
+      $("header").fadeIn();
       console.log("mostrar");
     }
     prevScrollpos = currentScrollpos;
