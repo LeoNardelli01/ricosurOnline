@@ -85,9 +85,18 @@ header .logo{
   height: 100px;
   background-color: rgb(93, 93, 93);
   margin: 10px;
+  padding-top: 10px;
   border-radius: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
 }
 
+.slider .sector i{
+  font-size: 40px;
+}
 
 
 .pantalla-tres{

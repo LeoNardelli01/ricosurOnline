@@ -26,7 +26,7 @@ $(function(){
     if (scrollPorcentaje >= 0) {
       pantalla_uno.css('opacity', (scrollPorcentaje - 0.05));
     } else{
-      pantalla_uno.css('opacity', (scrollPorcentaje + 0.58));
+      pantalla_uno.css('opacity', (scrollPorcentaje + 0.40));
     }
 
     //fadeOut y fadeIn de header
