@@ -25,6 +25,7 @@ header .logo{
   background-size: cover;
   background-attachment: fixed;
 }
+
 .menu {
   height: 64px;
   display: flex;
@@ -53,20 +54,45 @@ header .logo{
 .pantalla-uno .titulo h1{
   font-family: 'Exo 2', sans-serif;
   color: red;
-  font-size: 48px;
+  font-size: 60px;
   font-weight: bolder;
 
 }
+
+
+/* Pantalla DOS */
+
 .pantalla-dos{
   width: 100vw;
   height: 100vh;
-  
+  padding-top: 30px;
+
 }
+.sectores h2 {
+  color: red;
+}
+.slider{
+  display: flex;
+  overflow-x: auto;
+
+}
+.slider::-webkit-scrollbar{
+  display: none;
+}
+
+.slider .sector{
+  min-width: 100px;
+  height: 100px;
+  background-color: rgb(93, 93, 93);
+  margin: 10px;
+  border-radius: 150px;
+}
+
+
 
 .pantalla-tres{
   width: 100vw;
   height: 100vh;
-
   background-attachment: fixed;
 }
 

@@ -1,4 +1,5 @@
 $(function(){
+
   var btn_ingresar = $("#btn-ingresar");
   var btn_registrarse = $("#btn-registrarse")
   var btn_milista = $("#btn-milista");
@@ -21,12 +22,14 @@ $(function(){
     var currentScrollpos = window.pageYOffset;
     var scrollPorcentaje = (pantallaUnoHeight - window.scrollY) / pantallaUnoHeight;
 
+    //Opacidad de pantalla-uno
     if (scrollPorcentaje >= 0) {
-      pantalla_uno.css('opacity', (scrollPorcentaje - 0.28));
+      pantalla_uno.css('opacity', (scrollPorcentaje - 0.05));
     } else{
-      pantalla_uno.css('opacity', (scrollPorcentaje + 0.28));
+      pantalla_uno.css('opacity', (scrollPorcentaje + 0.58));
     }
 
+    //fadeOut y fadeIn de header
     if (prevScrollpos <= 50) {
       header.fadeIn();
     } else if (prevScrollpos < currentScrollpos) {
@@ -36,10 +39,15 @@ $(function(){
     }
     prevScrollpos = currentScrollpos;
 
+  }); //end scroll
 
-
+  //Velocity
+  $(".ofertas").velocity({
+    opacity: 1
+  }, {
+    duration: 1000,
+    easing: 'swing'
   });
-
 
   // BOTONES
   btn_home.click(function(){
