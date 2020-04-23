@@ -83,7 +83,7 @@ header .logo{
 .slider .sector{
   min-width: 100px;
   height: 100px;
-  background-color: rgb(93, 93, 93);
+  background-color: rgb(115, 115, 115);
   margin: 10px;
   padding-top: 10px;
   border-radius: 150px;
@@ -96,6 +96,28 @@ header .logo{
 
 .slider .sector i{
   font-size: 40px;
+}
+
+.slider .oferta{
+  min-width: 200px;
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+  margin: 16px;
+  border-radius: 15px;
+  box-shadow: 10px -5px 10px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.slider .oferta p{
+  font-size: 24px;
+  color: black;
+  margin-bottom: 0px !important;
+}
+.slider .oferta i{
+  font-size: 120px;
+  color: black;
 }
 
 

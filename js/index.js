@@ -1,5 +1,8 @@
 $(function(){
 
+  var num = (Math.floor(Math.random() * 9) + 1);
+
+
   var btn_ingresar = $("#btn-ingresar");
   var btn_registrarse = $("#btn-registrarse")
   var btn_milista = $("#btn-milista");
@@ -15,9 +18,10 @@ $(function(){
 
   var pantalla_uno = $(".pantalla-uno");
   var pantallaUnoHeight = pantalla_uno.outerHeight();
+// ----------------
 
-
-  // SCROLL
+//=================
+    // SCROLL
   $(document).on('scroll', function(){
     var currentScrollpos = window.pageYOffset;
     var scrollPorcentaje = (pantallaUnoHeight - window.scrollY) / pantallaUnoHeight;
@@ -41,6 +45,8 @@ $(function(){
 
   }); //end scroll
 
+//====================
+
   //Velocity
   $(".ofertas").velocity({
     opacity: 1
@@ -48,6 +54,10 @@ $(function(){
     duration: 1000,
     easing: 'swing'
   });
+
+
+
+//==================================================
 
   // BOTONES
   btn_home.click(function(){
