@@ -36,10 +36,13 @@ $(function(){
     //fadeOut y fadeIn de header
     if (prevScrollpos <= 50) {
       header.fadeIn();
+
     } else if (prevScrollpos < currentScrollpos) {
       header.fadeOut();
     } else{
       header.fadeIn();
+      header.css('background', 'rgb(48, 48, 48)')
+
     }
     prevScrollpos = currentScrollpos;
 
@@ -56,21 +59,33 @@ $(function(){
   });
 
 
+//==================================================
+// sweetalert
+
+
+
+
 
 //==================================================
 
   // BOTONES
+
   btn_home.click(function(){
     $(location).attr('href', 'index.html');
   });
   btn_ingresar.click(function(){
-    alert("ingresar");
+  Swal.fire('INGRESADO!');
   });
   btn_registrarse.click(function(){
     alert("registrarse");
   });
   btn_milista.click(function(){
     alert("mi lista");
+  });
+
+  //==================================================
+  $(".oferta").click(function(){
+    alert("oferta!");
   });
 
 

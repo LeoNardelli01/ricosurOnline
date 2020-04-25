@@ -9,7 +9,12 @@
   padding: 0px !important;
 }
 
-
+header {
+  margin-bottom: 0px !important;
+}
+ul {
+  margin-bottom: 0px !important;
+}
 header .logo{
   position: absolute;
   width: 64px;
@@ -22,7 +27,7 @@ header .logo{
   background-image: url("../assets/img/fondo.jpg");
   height: 100vh;
   background-position: center;
-  background-size: cover;
+  background-size: cover !important;
   background-attachment: fixed;
 }
 
@@ -41,8 +46,8 @@ header .logo{
   color: white;
   font-family: 'Exo 2', sans-serif;
   text-shadow: 6px 4px 10px black;
-
 }
+
 
 .pantalla-uno .titulo{
   height: 100vh;
@@ -69,7 +74,9 @@ header .logo{
 
 }
 .sectores h2 {
-  color: red;
+  color: white;
+  margin-left: 16px;
+  margin-top: 50px;
 }
 .slider{
   display: flex;
@@ -91,12 +98,14 @@ header .logo{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-shadow: 10px -5px 15px black inset, -10px 5px 25px rgb(180, 180, 180) inset ;
 
 }
 
 .slider .sector i{
   font-size: 40px;
 }
+
 
 .slider .oferta{
   min-width: 200px;
