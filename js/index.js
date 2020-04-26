@@ -41,7 +41,7 @@ $(function(){
       header.fadeOut();
     } else{
       header.fadeIn();
-      header.css('background', 'rgb(48, 48, 48)');
+      header.css('background', 'black');
 
     }
     prevScrollpos = currentScrollpos;
