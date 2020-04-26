@@ -60,7 +60,23 @@ $(function(){
 
 
 //==================================================
-// sweetalert
+// SWEET ALERT
+
+// ALERT "producto agregado"
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 2000,
+  timerProgressBar: true,
+  onOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+});
+
+
+
 
 
 
@@ -87,24 +103,24 @@ $(function(){
   });
 
   //==================================================
-  $(".oferta").click(function(e){
-
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 2000,
-      timerProgressBar: true,
-      onOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    });
-
+  $(".oferta").click(function(){
+    Swal.fire({
+  title: '¿Agregar a la lista?',
+  icon: 'question',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  cancelButtonText: 'Cancelar',
+  confirmButtonText: 'Si, agregar!'
+}).then((result) => {
+  if (result.value) {
     Toast.fire({
       icon: 'success',
       title: 'Producto agregado'
     });
+  }
+});
+
 
   });
 
