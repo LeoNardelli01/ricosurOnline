@@ -20,7 +20,6 @@ header .logo{
   width: 64px;
   height: 64px;
   padding: 5px;
-  margin: 5px;
 
 }
 .pantalla-uno{
@@ -65,15 +64,44 @@ header .logo{
 }
 
 
+.flecha-abajo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 150px;
+}
+
+@keyframes moverFlecha {
+  0%{
+    top: 0px;
+  }
+  50%{
+    top: 20px;
+  }
+  100%{
+    top: 0px;
+  }
+}
+.flecha-abajo i{
+  position: relative;
+  color: white;
+  font-size: 60px;
+  animation-name: moverFlecha;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
 /* Pantalla DOS */
 
 .pantalla-dos{
   width: 100vw;
-  height: 100vh;
+
   padding-top: 30px;
 
 }
-.sectores h2 {
+ h2 {
   color: white;
   margin-left: 16px;
   margin-top: 50px;
@@ -112,8 +140,9 @@ header .logo{
   height: 250px;
   background-color: rgb(255, 255, 255);
   margin: 16px;
+  padding: 0px 5px 0px 5px;
   border-radius: 15px;
-  box-shadow: 10px -5px 10px black;
+  box-shadow: 10px -5px 10px rgb(32, 32, 32);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,6 +158,20 @@ header .logo{
   color: black;
 }
 
+.publicidad{
+  margin-top: 50px;
+  width: 100%;
+  height: 200px;
+  background-color: rgb(189, 116, 182);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+/* PANTALLA TRES*/
 
 .pantalla-tres{
   width: 100vw;

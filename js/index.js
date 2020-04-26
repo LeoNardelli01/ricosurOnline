@@ -41,7 +41,7 @@ $(function(){
       header.fadeOut();
     } else{
       header.fadeIn();
-      header.css('background', 'rgb(48, 48, 48)')
+      header.css('background', 'rgb(48, 48, 48)');
 
     }
     prevScrollpos = currentScrollpos;
@@ -73,19 +73,39 @@ $(function(){
   btn_home.click(function(){
     $(location).attr('href', 'index.html');
   });
+
   btn_ingresar.click(function(){
   Swal.fire('INGRESADO!');
   });
+
   btn_registrarse.click(function(){
     alert("registrarse");
   });
+
   btn_milista.click(function(){
     alert("mi lista");
   });
 
   //==================================================
-  $(".oferta").click(function(){
-    alert("oferta!");
+  $(".oferta").click(function(e){
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      onOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    });
+
+    Toast.fire({
+      icon: 'success',
+      title: 'Producto agregado'
+    });
+
   });
 
 
