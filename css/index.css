@@ -173,9 +173,16 @@ header .logo{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('../assets/img/tabla.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow:  7px 7px 10px black inset, -7px -7px 10px black inset;
 }
 .publicidad h3{
-  color: rgb(203, 203, 203);
+  font-size: 30px;
+  color: white;
+  text-shadow: 5px 5px 10px black;
 }
 
 /* PANTALLA TRES*/
