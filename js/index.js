@@ -76,7 +76,11 @@ const Toast = Swal.mixin({
 });
 
 
-
+//=================================================
+//FUNCIONES
+function agregarProducto(nombre, precio){
+  localStorage.setItem(nombre, precio);
+}
 
 
 
@@ -84,7 +88,7 @@ const Toast = Swal.mixin({
 
 //==================================================
 
-  // BOTONES
+  // BOTONES redirecciones
 
   btn_home.click(function(){
     $(location).attr('href', 'index.html');
@@ -99,27 +103,35 @@ const Toast = Swal.mixin({
   });
 
   btn_milista.click(function(){
-    alert("mi lista");
+    $(location).attr('href', 'html/milista.html');
   });
+
 
   //==================================================
   $(".oferta").click(function(){
+
+    var nombre_prod = $(this).children("p").text();
+    var precio_prod = $(this).children("h4").text();
+
+
     Swal.fire({
-  title: '¿Agregar a la lista?',
-  icon: 'question',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  cancelButtonText: 'Cancelar',
-  confirmButtonText: 'Si, agregar!'
-}).then((result) => {
-  if (result.value) {
-    Toast.fire({
-      icon: 'success',
-      title: 'Producto agregado'
+      title: '¿Agregar ' + nombre_prod + '?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Si, agregar!'
+    }).then((result) => {
+      if (result.value) {
+        Toast.fire({
+          icon: 'success',
+          title: 'Producto agregado'
+        });
+
+        agregarProducto(nombre_prod, precio_prod);
+      }
     });
-  }
-});
 
 
   });

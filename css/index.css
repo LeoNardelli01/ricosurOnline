@@ -140,24 +140,25 @@ header .logo{
 
 
 .slider .oferta{
-  min-width: 100px;
-  height: 150px;
+  min-width: 150px;
+  height: 250px;
   background-color: rgb(48, 48, 48);
   margin: 5px;
   padding: 0px 5px 0px 5px;
   border-radius: 3px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
 .slider .oferta p{
-  font-size: 16px;
+
+  font-size: 20px;
   color: white;
   margin-bottom: 0px !important;
 }
 .slider .oferta i{
-  font-size: 40px;
+  font-size: 70px;
   color: white;
 }
 .slider .oferta h4{
