@@ -26,6 +26,10 @@ $(function(){
 
 //==============================================================
 //btn enviar pedido
+        /*
+            si pedido esta vacio, el boton enviar esta bloqueado,
+
+        */
   $("#btn-enviar-pedido").click(function(){
     $(location).attr('href', whatsapp);
   });//fin enviar pedido
