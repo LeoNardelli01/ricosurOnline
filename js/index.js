@@ -132,9 +132,7 @@ function agregarProducto(nombre, precio){
         agregarProducto(nombre_prod, precio_prod);
       }
     });
-
-
-  });
+  }); //fin oferta.click
 
 
 
