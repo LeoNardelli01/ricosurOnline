@@ -12,7 +12,6 @@ $(function(){
     whatsapp += pedido[i];
   }
 
-  console.log(whatsapp);
 //==========================================================
 //Sweet ALERT
 
@@ -23,19 +22,12 @@ $(function(){
 
 //============================================================
 // funcion Preparar Pedido
-  function prepararPedido(array){
-    for (var i = 0; i < array.length; i++) {
-
-
-    }
-
-  }
 
 
 //==============================================================
 //btn enviar pedido
   $("#btn-enviar-pedido").click(function(){
-    prepararPedido(pedido);
+    $(location).attr('href', whatsapp);
   });//fin enviar pedido
 
 
