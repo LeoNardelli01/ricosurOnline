@@ -1,4 +1,7 @@
 $(function(){
+  var articulos = localStorage.length;
+  articulos.toString();
+  $("#articulos").text(articulos);
 
   var num = (Math.floor(Math.random() * 9) + 1);
 
@@ -67,7 +70,7 @@ const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
-  timer: 2000,
+  timer: 1100,
   timerProgressBar: true,
   onOpen: (toast) => {
     toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -110,6 +113,7 @@ function agregarProducto(nombre, precio){
   //==================================================
   $(".oferta").click(function(){
 
+
     var nombre_prod = $(this).children("p").text();
     var precio_prod = $(this).children("h4").text();
 
@@ -130,6 +134,9 @@ function agregarProducto(nombre, precio){
         });
 
         agregarProducto(nombre_prod, precio_prod);
+        articulos = localStorage.length;
+        
+        $("#articulos").text(articulos);
       }
     });
   }); //fin oferta.click

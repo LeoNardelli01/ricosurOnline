@@ -1,0 +1,65 @@
+
+
+header{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  box-shadow: 5px 0 0 black;
+  height: 60px;
+  background-color: black;
+  padding-top: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#btn-home p,
+#btn-buscar p,
+#btn-ofertas p,
+#btn-categorias p,
+#btn-contacto p{
+  margin-bottom: 4px !important;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+}
+
+i{
+  font-size: 28px;
+  color: white;
+  display: inline;
+}
+
+
+#btn-home,
+#btn-buscar,
+#btn-ofertas,
+#btn-contacto {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#btn-home i{
+  color: red;
+}
+#btn-buscar i{
+  color: rgb(0, 133, 255);
+}
+#btn-ofertas i{
+  color: rgb(255, 161, 161);
+}
+#btn-contacto i{
+  color: #4FCE5D;
+}
