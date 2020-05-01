@@ -4,13 +4,17 @@ header{
 
 }
 
-.milista .col, .milista .col-1{
+.milista .col, .milista .col-1, .milista .col-3{
   padding: 0px !important;
+}
+.milista .precio-venta{
+  padding-right: 10px !important;
 }
 
 .milista .eliminar i{
   color: red;
   font-size: 20px;
+  margin-bottom: 16px !important;
 }
 
 

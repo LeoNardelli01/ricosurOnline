@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .container-fluid{
   background-color: black;
@@ -104,6 +107,10 @@ header .logo{
   padding-top: 30px;
 
 }
+.slider .sector i{
+  color: rgb(252, 164, 47);  
+}
+
  h2 {
   font-size: 20px;
   color: white;

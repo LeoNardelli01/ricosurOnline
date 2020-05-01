@@ -27,8 +27,11 @@ $(function(){
     localStorage.removeItem(item.key)
   };
 
+
+
+
   //WhatsApp
-  var whatsapp = "https://api.whatsapp.com/send?phone=5491150119067&text=Mi%20lista:%20Nombre%20de%20usuario%20%20---%20%20";
+  var whatsapp = "https://api.whatsapp.com/send?phone=5491150119067&text=Pedido%20de:%20Nombre%20de%20usuario%20%20---%20%20";
   var pedido = [];
 
   for (var i = 0; i <= localStorage.length - 1; i++) {
@@ -37,9 +40,9 @@ $(function(){
 
     $(".lista").append("<p class=''>" + localStorage.key(i) + "</p>");
 
-    $(".precio-venta").append("<p>" + localStorage.getItem(localStorage.key(i)) + "</p>");
-    $(".eliminar").append("<i class='far fa-trash-alt'></i>");
-    
+    $(".precio-venta").append("<p class='text-right'>" + localStorage.getItem(localStorage.key(i)) + "</p>" );
+    //$(".eliminar").append("");
+
     pedido[i] = $.trim(localStorage.key(i).replace(/ /g, '%20'));
     pedido[i] += '%20%7C%20';
 

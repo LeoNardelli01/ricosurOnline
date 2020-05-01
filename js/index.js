@@ -1,9 +1,11 @@
 $(function(){
+
   var articulos = localStorage.length;
   articulos.toString();
   $("#articulos").text(articulos);
 
-  var num = (Math.floor(Math.random() * 9) + 1);
+  // genera un numero aleatorio entre 0 y el multiplicador de Math.random(), en este caso de 0 a 9
+  //var num = (Math.floor(Math.random() * 9) + 1);
 
   var whatsapp = "https://api.whatsapp.com/send?phone=5491150119067&text=Hola!%20(consulta%20web):%20";
   var btn_ingresar = $("#btn-ingresar");
@@ -53,13 +55,16 @@ $(function(){
 
 //====================
 
+
   //Velocity
+  /*
   $(".ofertas").velocity({
     opacity: 1
   }, {
     duration: 1000,
     easing: 'swing'
   });
+  */
 
 
 //==================================================
@@ -117,10 +122,8 @@ function agregarProducto(nombre, precio){
   //==================================================
   $(".oferta").click(function(){
 
-
     var nombre_prod = $(this).children("p").text();
     var precio_prod = $(this).children("h4").text();
-
 
     Swal.fire({
       title: '¿Agregar ' + nombre_prod + '?',
