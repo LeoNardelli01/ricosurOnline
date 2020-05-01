@@ -1,10 +1,45 @@
 $(function(){
+  var articulos = localStorage.length;
+  articulos.toString();
+  $("#articulos").text(articulos);
+
+  //FUNCIONES
+  function eliminarItem(item){
+    //preguntar si desea eliminar,
+    swal({
+      title: "¿Eliminar ?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+
+
+    localStorage.removeItem(item.key)
+  };
+
   //WhatsApp
   var whatsapp = "https://api.whatsapp.com/send?phone=5491150119067&text=Mi%20lista:%20Nombre%20de%20usuario%20%20---%20%20";
   var pedido = [];
 
   for (var i = 0; i <= localStorage.length - 1; i++) {
-    $(".lista").append("<p class='' >" + localStorage.key(i) + "(" + localStorage.getItem(localStorage.key(i)) + ")"+ "</p>");
+
+
+
+    $(".lista").append("<p class=''>" + localStorage.key(i) + "</p>");
+
+    $(".precio-venta").append("<p>" + localStorage.getItem(localStorage.key(i)) + "</p>");
+    $(".eliminar").append("<i class='far fa-trash-alt'></i>");
+    
     pedido[i] = $.trim(localStorage.key(i).replace(/ /g, '%20'));
     pedido[i] += '%20%7C%20';
 
@@ -14,6 +49,7 @@ $(function(){
 
   whatsapp += 'Dirección:%20direccion%20del%20usuario%20136.'
 //==========================================================
+
 //Sweet ALERT
 
 

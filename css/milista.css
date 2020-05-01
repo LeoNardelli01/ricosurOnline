@@ -4,8 +4,14 @@ header{
 
 }
 
+.milista .col, .milista .col-1{
+  padding: 0px !important;
+}
 
-
+.milista .eliminar i{
+  color: red;
+  font-size: 20px;
+}
 
 
 
@@ -25,10 +31,11 @@ footer{
   padding-right: 7px;
 }
 #btn-home p,
-#btn-buscar p,
+#btn-milista p,
 #btn-ofertas p,
 #btn-categorias p,
-#btn-contacto p{
+#btn-contacto p,
+#btn-buscar p {
   margin-bottom: 4px !important;
   color: white;
   font-family: 'Exo 2', sans-serif;
@@ -42,9 +49,10 @@ i{
 
 
 #btn-home,
-#btn-buscar,
+#btn-milista,
 #btn-ofertas,
-#btn-contacto {
+#btn-contacto,
+#btn-buscar {
 
   display: flex;
   justify-content: center;
@@ -62,4 +70,7 @@ i{
 }
 #btn-contacto i{
   color: #4FCE5D;
+}
+#btn-milista i{
+  color: rgb(247, 254, 112);
 }

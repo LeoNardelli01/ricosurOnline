@@ -203,10 +203,11 @@ footer{
   padding-right: 7px;
 }
 #btn-home p,
-#btn-buscar p,
+#btn-milista p,
 #btn-ofertas p,
 #btn-categorias p,
-#btn-contacto p{
+#btn-contacto p,
+#btn-buscar p {
   margin-bottom: 4px !important;
 }
 
@@ -221,9 +222,10 @@ p{
 }
 
 #btn-home,
-#btn-buscar,
+#btn-milista,
 #btn-ofertas,
-#btn-contacto {
+#btn-contacto,
+#btn-buscar {
 
   display: flex;
   justify-content: center;
@@ -241,4 +243,7 @@ p{
 }
 #btn-contacto i{
   color: #4FCE5D;
+}
+#btn-milista i{
+  color: rgb(247, 254, 112);
 }

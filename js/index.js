@@ -5,7 +5,7 @@ $(function(){
 
   var num = (Math.floor(Math.random() * 9) + 1);
 
-
+  var whatsapp = "https://api.whatsapp.com/send?phone=5491150119067&text=Hola!%20(consulta%20web):%20";
   var btn_ingresar = $("#btn-ingresar");
   var btn_registrarse = $("#btn-registrarse")
   var btn_milista = $("#btn-milista");
@@ -109,6 +109,10 @@ function agregarProducto(nombre, precio){
     $(location).attr('href', 'html/milista.html');
   });
 
+  btn_contacto.click(function(){
+    $(location).attr('href', whatsapp);
+  });
+
 
   //==================================================
   $(".oferta").click(function(){
@@ -135,7 +139,7 @@ function agregarProducto(nombre, precio){
 
         agregarProducto(nombre_prod, precio_prod);
         articulos = localStorage.length;
-        
+
         $("#articulos").text(articulos);
       }
     });
