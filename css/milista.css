@@ -11,15 +11,18 @@ header{
   padding-right: 10px !important;
 }
 
-.milista .eliminar i{
+.lista i{
   color: red;
   font-size: 20px;
   margin-bottom: 16px !important;
 }
+.lista p i{
+  margin-right: 10px;
+}
 
-
-
-
+tr th i{
+  color:red;
+}
 
 
 
@@ -45,7 +48,7 @@ footer{
   font-family: 'Exo 2', sans-serif;
 }
 
-i{
+footer i{
   font-size: 28px;
   color: white;
   display: inline;

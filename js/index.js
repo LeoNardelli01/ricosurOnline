@@ -92,8 +92,6 @@ function agregarProducto(nombre, precio){
 
 
 
-
-
 //==================================================
 
   // BOTONES redirecciones
