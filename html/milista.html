@@ -14,7 +14,8 @@
     <div class="container-fluid">
 
       <header>
-
+        <h1>Pedido</h1>
+        <p>Este es tu pedido [nombre_usuario], no te olvides de ver lo que hemos seleccionado<a href="#"> para ti</a></p>
       </header>
 
       <div class="milista row">
@@ -26,11 +27,15 @@
               <th>$</th>
             </tr>
           </thead>
-          <tbody class="eliminar">
-          
+          <tbody class="pedido">
+
           </tbody>
         </table>
 
+      </div>
+
+      <div class="enviar-pedido">
+        <button id="btn-enviar-pedido" type="button" class="btn btn-success" name="button">Enviar Pedido</button>
       </div>
 
       <footer class="fixed-bottom">
@@ -62,15 +67,6 @@
       </footer>
 
     </div><!-- fin container-fluid-->
-
-
-    <a id="btn-enviar-pedido" class="btn btn-success">Enviar Pedido</a>
-
-
-
-
-
-
 
     <!-- Javascript-->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>

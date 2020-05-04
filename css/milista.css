@@ -1,5 +1,7 @@
 
-
+body{
+  min-height: 100vh; 
+}
 header{
 
 }
@@ -24,7 +26,12 @@ tr th i{
   color:red;
 }
 
+.enviar-pedido{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 
 
 

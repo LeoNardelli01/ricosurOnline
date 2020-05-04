@@ -1,49 +1,31 @@
 $(function(){
+  let timerInterval;
+
   var whatsapp = "https://api.whatsapp.com/send?phone=5491150119067&text=Pedido%20de:%20Nombre%20de%20usuario%20%20---%20%20";
   var pedido = [];
   var articulos = localStorage.length;
-
   articulos.toString();
   $("#articulos").text(articulos);
 
+  //si no hay articulos, btn enviar pedido disabled
+  if (localStorage.length == 0) {
+    $("#btn-enviar-pedido").attr('disabled' , true);
+  }
   //BOTONES:
 
   $("#btn-home").click(function(){
     $(location).attr('href', '../index.html');
   });
 
-
   //FUNCIONES
-  function eliminarItem(key){
-    //preguntar si desea eliminar,
 
-    swal({
-      title: "¿Eliminar " +  + "?",
-      text: "Lo quitaremos de tu lista de compra",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        swal("Poof! Your imaginary file has been deleted!", {
-          icon: "success",
-        });
-      } else {
-        swal("Your imaginary file is safe!");
-      }
-    });
-
-
-    localStorage.removeItem(item.key)
-  }; //fin eliminarItem()
 
   function crearLista(){
 
     for (var i = 0; i <= localStorage.length - 1; i++) {
 
-      $(".eliminar").append(
-        "<tr><th scope='row'>" + "<i id='btn-eliminar' class='fas fa-trash-alt'></i>" + "</th><td>" + localStorage.key(i) + "</td><td>" + localStorage.getItem(localStorage.key(i)) + "</td></tr>"
+      $(".pedido").append(
+        "<tr class='eliminar'><th scope='row'>" + "<i id='btn-eliminar' class='fas fa-trash-alt'></i>" + "</th><td>" + localStorage.key(i) + "</td><td>" + localStorage.getItem(localStorage.key(i)) + "</td></tr>"
       );
 
 
@@ -65,10 +47,29 @@ $(function(){
 //Eliminar item
 $(".eliminar").click(function(){
 
-    //mostrar ventana con el producto seleccionado.
-    //mostrar foto y precio del producto.
-    // input agregar cantidades
-    // btn eliminar producto
+  var item = $(this).children('td:nth-child(2)').text();
+
+  Swal.fire({
+  title: 'quitar '+ item + ' ?',
+  text: "Podras agregarlo luego!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, Quitarlo!'
+  }).then((result) => {
+    if (result.value) {
+      localStorage.removeItem(item);
+
+      Swal.fire(
+        'Eliminado',
+        'Lo has quitado de tu lista.',
+        'success'
+      )
+      location.reload();
+    }
+
+  });
 
 });
 
@@ -81,7 +82,7 @@ $(".eliminar").click(function(){
             si pedido esta vacio, el boton enviar esta bloqueado,
 
         */
-  let timerInterval
+
 
   $("#btn-enviar-pedido").click(function(){
 
@@ -89,7 +90,7 @@ $(".eliminar").click(function(){
       Swal.fire({
         title: '¡Enviando Pedido!',
         html: 'redireccionando a Whatsapp en <b></b>',
-        timer: 3500,
+        timer: 3300,
         timerProgressBar: true,
         onBeforeOpen: () => {
           Swal.showLoading()
@@ -109,13 +110,15 @@ $(".eliminar").click(function(){
       }).then((result) => {
         /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('Enviando pedido...')
+
           localStorage.clear();
-          crearLista();
+
+          $(location).attr('href', whatsapp);
 
         }
       })
-      $(location).attr('href', whatsapp);
+
+
   });//fin enviar pedido
 
 
