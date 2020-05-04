@@ -3,6 +3,7 @@ $(function(){
 
   var whatsapp = "https://api.whatsapp.com/send?phone=5491150119067&text=Pedido%20de:%20Nombre%20de%20usuario%20%20---%20%20";
   var pedido = [];
+  var total_pedido = 0;
   var articulos = localStorage.length;
   articulos.toString();
   $("#articulos").text(articulos);
@@ -33,7 +34,13 @@ $(function(){
       pedido[i] = $.trim((localStorage.key(i).replace(/ /g, '%20')));
       pedido[i] += '%20%7C%20';
       whatsapp += pedido[i];
+
+      total_pedido += parseInt(localStorage.getItem(localStorage.key(i)));
+
     }
+
+    $(".pedido").append(
+      "<tr><th scope='row'></th><td>TOTAL</td><td id='total-pedido'>" + total_pedido + ".00</td></tr>");
 
     whatsapp += 'Dirección:%20direccion%20del%20usuario%20136.'
   };
@@ -41,6 +48,16 @@ $(function(){
   //Cominezo
 
   crearLista();
+  if (total_pedido < 500) {
+
+    $("#btn-enviar-pedido").attr('disabled' , true);
+    $("#total-pedido").css('color', 'red');
+    
+
+  } else {
+    $("#btn-enviar-pedido").attr('disabled' , false);
+    $("#total-pedido").css('color', 'green');
+  }
 
 //==========================================================
 
