@@ -8,6 +8,9 @@ $(function(){
   articulos.toString();
   $("#articulos").text(articulos);
 
+
+
+
   //si no hay articulos, btn enviar pedido disabled
   if (localStorage.length == 0) {
     $("#btn-enviar-pedido").attr('disabled' , true);
@@ -20,6 +23,9 @@ $(function(){
 
   //FUNCIONES
 
+  function agregarProducto(nombre, precio){
+    localStorage.setItem(nombre, precio);
+  }
 
   function crearLista(){
 
@@ -37,27 +43,46 @@ $(function(){
 
       total_pedido += parseInt(localStorage.getItem(localStorage.key(i)));
 
+      
+
+      if (total_pedido < 500) {
+
+        $("#btn-enviar-pedido").attr('disabled' , true);
+        $("#total-pedido").css('color', 'red');
+        $("#envio").text("El minimo para pedidos Online es de $500.00").css('color', 'red');
+      } else if (total_pedido < 1000){
+
+        $("#btn-enviar-pedido").attr('disabled' , false);
+        $("#total-pedido").css('color', 'blue');
+        $("#envio").text("El envio tiene un costo adicional de $50.00").css('color', 'blue');
+      } else{
+
+        $("#btn-enviar-pedido").attr('disabled' , false);
+        $("#total-pedido").css('color', 'green');
+        $("#envio").text("¡Te lo enviaremos GRATIS!").css('color', 'green');
+      }
+
     }
 
     $(".pedido").append(
       "<tr><th scope='row'></th><td>TOTAL</td><td id='total-pedido'>" + total_pedido + ".00</td></tr>");
 
-    whatsapp += 'Dirección:%20direccion%20del%20usuario%20136.'
+    whatsapp += '--%20Dirección:%20direccion%20del%20usuario%20136.'
   };
 
+
+
+  //==================================================
+
   //Cominezo
-
-  crearLista();
-  if (total_pedido < 500) {
-
+  if (total_pedido == 0) {
     $("#btn-enviar-pedido").attr('disabled' , true);
     $("#total-pedido").css('color', 'red');
-    
+    $("#envio").text("Lista vacia").css('color', 'red');
 
-  } else {
-    $("#btn-enviar-pedido").attr('disabled' , false);
-    $("#total-pedido").css('color', 'green');
   }
+  crearLista();
+
 
 //==========================================================
 
@@ -99,7 +124,6 @@ $(".eliminar").click(function(){
             si pedido esta vacio, el boton enviar esta bloqueado,
 
         */
-
 
   $("#btn-enviar-pedido").click(function(){
 

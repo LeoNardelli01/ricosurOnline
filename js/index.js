@@ -18,15 +18,14 @@ $(function(){
   var btn_contacto = $("#btn-contacto");
 
   // --------------
+  //         SCROLL
+
   var prevScrollpos = window.pageYOffset;
   var header = $("header");
 
   var pantalla_uno = $(".pantalla-uno");
   var pantallaUnoHeight = pantalla_uno.outerHeight();
-// ----------------
 
-//=================
-    // SCROLL
   $(document).on('scroll', function(){
     var currentScrollpos = window.pageYOffset;
     var scrollPorcentaje = (pantallaUnoHeight - window.scrollY) / pantallaUnoHeight;
@@ -53,25 +52,11 @@ $(function(){
 
   }); //end scroll
 
-//====================
+  //==================================================
+  //         SWEET ALERT
 
-
-  //Velocity
-  /*
-  $(".ofertas").velocity({
-    opacity: 1
-  }, {
-    duration: 1000,
-    easing: 'swing'
-  });
-  */
-
-
-//==================================================
-// SWEET ALERT
-
-// ALERT "producto agregado"
-const Toast = Swal.mixin({
+  // ALERT "producto agregado"
+  const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
@@ -83,41 +68,11 @@ const Toast = Swal.mixin({
   }
 });
 
-
-//=================================================
-//FUNCIONES
-function agregarProducto(nombre, precio){
-  localStorage.setItem(nombre, precio);
-}
-
-
-
-//==================================================
-
-  // BOTONES redirecciones
-
-  btn_home.click(function(){
-    $(location).attr('href', 'index.html');
-  });
-
-  btn_ingresar.click(function(){
-  Swal.fire('INGRESADO!');
-  });
-
-  btn_registrarse.click(function(){
-    alert("registrarse");
-  });
-
-  btn_milista.click(function(){
-    $(location).attr('href', 'html/milista.html');
-  });
-
-  btn_contacto.click(function(){
-    $(location).attr('href', whatsapp);
-  });
-
-
-  //==================================================
+  //=================================================
+  //FUNCIONES
+  function agregarProducto(nombre, precio){
+    localStorage.setItem(nombre, precio);
+  }
   $(".oferta").click(function(){
 
     var nombre_prod = $(this).children("p").text();
@@ -146,6 +101,43 @@ function agregarProducto(nombre, precio){
     });
   }); //fin oferta.click
 
+  function totalPedido(){
+    var totales = localStorage.length;
 
+    if (totales > 0) {
+      var total = 0;
+      for (var i = 0; i < localStorage.length ; i++) {
+          total += parseInt(localStorage.getItem(localStorage.key(i)));
+       }
+       return total;
+    }
+  }
+
+  $("#total-pedido").text(totalPedido());
+  //==================================================
+
+  // BOTONES redirecciones
+
+  btn_home.click(function(){
+    $(location).attr('href', 'index.html');
+  });
+
+  btn_ingresar.click(function(){
+  Swal.fire('INGRESADO!');
+  });
+
+  btn_registrarse.click(function(){
+    alert("registrarse");
+  });
+
+  btn_milista.click(function(){
+    $(location).attr('href', 'html/milista.html');
+  });
+
+  btn_contacto.click(function(){
+    $(location).attr('href', whatsapp);
+  });
+
+  //==================================================
 
 });

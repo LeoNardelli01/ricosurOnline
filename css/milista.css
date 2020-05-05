@@ -6,6 +6,7 @@ header{
 
 }
 
+
 .milista .col, .milista .col-1, .milista .col-3{
   padding: 0px !important;
 }
@@ -24,6 +25,14 @@ header{
 
 tr th i{
   color:red;
+}
+.delivery{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delivery #envio{
+
 }
 
 .enviar-pedido{
