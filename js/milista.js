@@ -4,7 +4,9 @@ $(function(){
   var whatsapp = "https://api.whatsapp.com/send?phone=5491150119067&text=Pedido%20de:%20Nombre%20de%20usuario%20%20---%20%20";
   var pedido = [];
   var total_pedido = 0;
+  var precio_con_descuento = 0;
   var articulos = localStorage.length;
+
   articulos.toString();
   $("#articulos").text(articulos);
 
@@ -43,31 +45,37 @@ $(function(){
 
       total_pedido += parseInt(localStorage.getItem(localStorage.key(i)));
 
-      
+      precio_con_descuento = (total_pedido / 1.05).toFixed(2);
 
-      if (total_pedido < 500) {
+    }//fin for
 
-        $("#btn-enviar-pedido").attr('disabled' , true);
-        $("#total-pedido").css('color', 'red');
-        $("#envio").text("El minimo para pedidos Online es de $500.00").css('color', 'red');
-      } else if (total_pedido < 1000){
 
-        $("#btn-enviar-pedido").attr('disabled' , false);
-        $("#total-pedido").css('color', 'blue');
-        $("#envio").text("El envio tiene un costo adicional de $50.00").css('color', 'blue');
-      } else{
+    if (total_pedido < 500) {
 
-        $("#btn-enviar-pedido").attr('disabled' , false);
-        $("#total-pedido").css('color', 'green');
-        $("#envio").text("¡Te lo enviaremos GRATIS!").css('color', 'green');
-      }
+      $("#btn-enviar-pedido").attr('disabled' , true);
+      $("#total-pedido").css('color', 'red');
+      $("#envio").text("El minimo para pedidos Online es de $500.00").css('color', 'red');
+    } else if (total_pedido < 1000){
 
+      $("#btn-enviar-pedido").attr('disabled' , false);
+      $("#total-pedido").css('color', 'blue');
+      $("#envio").text("El envio tiene un costo adicional de $50.00").css('color', 'blue');
+      whatsapp += '(Más%20$50.00%20envio)';
+    } else{
+
+      $("#btn-enviar-pedido").attr('disabled' , false);
+      $("#total-pedido").css('color', 'green');
+      $("#envio").text("¡Te lo enviaremos GRATIS!").css('color', 'green');
+      whatsapp += '(Envio%20GRATIS)';
     }
 
     $(".pedido").append(
-      "<tr><th scope='row'></th><td>TOTAL</td><td id='total-pedido'>" + total_pedido + ".00</td></tr>");
+      "<tr><th scope='row'></th><td>SUB-TOTAL</td><td id='total-pedido'>" + total_pedido + ".00</td></tr>");
+    $(".pedido").append(
+      "<tr><th scope='row'></th><td>Pago en EFECTIVO</td><td id='descuento'>" + precio_con_descuento + "</td></tr>");
 
     whatsapp += '--%20Dirección:%20direccion%20del%20usuario%20136.'
+    whatsapp += '%20--SUB-TOTAL(con%20Desc):%20' + '$%20' + precio_con_descuento + '.';
   };
 
 
