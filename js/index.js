@@ -73,6 +73,22 @@ $(function(){
   function agregarProducto(nombre, precio){
     localStorage.setItem(nombre, precio);
   }
+
+  function totalPedido(){
+
+    var totales = localStorage.length;
+    var total = 0;
+
+    if (totales > 0) {
+      for (var i = 0; i < localStorage.length ; i++) {
+            total += parseInt(localStorage.getItem(localStorage.key(i)));
+        }
+    }
+
+    return total;
+
+  }
+
   $(".oferta").click(function(){
 
     var nombre_prod = $(this).children("p").text();
@@ -92,7 +108,7 @@ $(function(){
           icon: 'success',
           title: 'Producto agregado'
         });
-
+        $("#total-pedido").text("$ " + totalPedido() + '.00');
         agregarProducto(nombre_prod, precio_prod);
         articulos = localStorage.length;
 
@@ -101,19 +117,9 @@ $(function(){
     });
   }); //fin oferta.click
 
-  function totalPedido(){
-    var totales = localStorage.length;
+  //=================== Comienzo! ====================
 
-    if (totales > 0) {
-      var total = 0;
-      for (var i = 0; i < localStorage.length ; i++) {
-          total += parseInt(localStorage.getItem(localStorage.key(i)));
-       }
-       return total;
-    }
-  }
 
-  $("#total-pedido").text(totalPedido());
   //==================================================
 
   // BOTONES redirecciones

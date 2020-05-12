@@ -72,7 +72,7 @@ $(function(){
     $(".pedido").append(
       "<tr><th scope='row'></th><td>SUB-TOTAL</td><td id='total-pedido'>" + total_pedido + ".00</td></tr>");
     $(".pedido").append(
-      "<tr><th scope='row'></th><td>Pago en EFECTIVO</td><td id='descuento'>" + precio_con_descuento + "</td></tr>");
+      "<tr><th scope='row'></th><td>En EFECTIVO (Desc Online)</td><td id='descuento'>" + precio_con_descuento + "</td></tr>");
 
     whatsapp += '--%20Dirección:%20direccion%20del%20usuario%20136.'
     whatsapp += '%20--SUB-TOTAL(con%20Desc):%20' + '$%20' + precio_con_descuento + '.';
