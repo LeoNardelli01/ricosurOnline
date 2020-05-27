@@ -10,15 +10,11 @@ $(function(){
   articulos.toString();
   $("#articulos").text(articulos);
 
-
-
-
   //si no hay articulos, btn enviar pedido disabled
   if (localStorage.length == 0) {
     $("#btn-enviar-pedido").attr('disabled' , true);
   }
   //BOTONES:
-
   $("#btn-home").click(function(){
     $(location).attr('href', '../index.html');
   });
@@ -36,8 +32,6 @@ $(function(){
       $(".pedido").append(
         "<tr class='eliminar'><th scope='row'>" + "<i id='btn-eliminar' class='fas fa-trash-alt'></i>" + "</th><td>" + localStorage.key(i) + "</td><td>" + localStorage.getItem(localStorage.key(i)) + "</td></tr>"
       );
-
-
 
       pedido[i] = $.trim((localStorage.key(i).replace(/ /g, '%20')));
       pedido[i] += '%20%7C%20';
@@ -77,7 +71,6 @@ $(function(){
     whatsapp += '--%20Dirección:%20direccion%20del%20usuario%20136.'
     whatsapp += '%20--SUB-TOTAL(con%20Desc):%20' + '$%20' + precio_con_descuento + '.';
   };
-
 
 
   //==================================================

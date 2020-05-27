@@ -28,6 +28,14 @@ header .logo{
   padding: 5px;
 
 }
+p a{
+  font-size: 26px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: red;
+  text-shadow: 2px 3px 5px white, -2px -3px 5px white;
+}
+
 .pantalla-uno{
   background-image: url("../assets/img/fondo.jpg");
   height: 100vh;
@@ -158,13 +166,15 @@ header .logo{
 }
 .slider .oferta p{
 
-  font-size: 20px;
+  font-size: 16px;
   color: white;
   margin-bottom: 0px !important;
+  height: 60px;
 }
-.slider .oferta i{
-  font-size: 70px;
-  color: white;
+.slider .oferta img{
+  width: 100%;
+  max-width: 140px;
+
 }
 .slider .oferta h4{
   font-size: 20px;
@@ -227,12 +237,18 @@ header .logo{
 
 footer{
   box-shadow: 5px 0 0 black;
-  height: 60px;
+  height: 45px;
   background-color: black;
   padding-top: 5px;
   padding-left: 7px;
   padding-right: 7px;
 }
+footer .row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #btn-home p,
 #btn-milista p,
 #btn-ofertas p,
@@ -242,13 +258,10 @@ footer{
   margin-bottom: 4px !important;
 }
 
-i{
-  font-size: 28px;
-  color: white;
-  display: inline;
-}
+
 p{
   color: white;
+  font-size: 14px;
   font-family: 'Exo 2', sans-serif
 }
 

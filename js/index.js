@@ -144,6 +144,9 @@ $(function(){
     $(location).attr('href', whatsapp);
   });
 
+  btn_buscar.click(function(){
+    $(location).attr('href', 'html/buscar.html');
+  });
   //==================================================
 
 });
